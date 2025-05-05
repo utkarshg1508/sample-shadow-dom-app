@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Button, Card, ComponentLoader, Heading, Layout, Text } from '@netapp/bxp-design-system-react';
 import productsData from "../assets/products.json";
-import { Button, Card, ComponentLoader, Layout } from '@netapp/bxp-design-system-react';
 
 interface ProductProps {
     id: number;
@@ -23,8 +23,8 @@ const Product = React.memo(({ name, price, src }: ProductProps) => {
                 <ComponentLoader style={{ margin: 'auto' }} />
             ) : (
                 <>
-                    <h3>{name}</h3>
-                    <p>{`$${price}`}</p>
+                    <Heading level={20}>{name}</Heading>
+                    <Text>{`$${price}`}</Text>
                     <Button onClick={() => { }}>Add to Cart</Button>
                 </>
             )}
@@ -32,7 +32,7 @@ const Product = React.memo(({ name, price, src }: ProductProps) => {
     );
 });
 
-const Products: React.FC = () => {
+const Products = () => {
     return (
         <Layout.Page>
             <Layout.Content>

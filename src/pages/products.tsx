@@ -1,32 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import productsData from "../assets/products.json";
+import { Button, Card, ComponentLoader, Layout } from '@netapp/bxp-design-system-react';
+
+interface ProductProps {
+    id: number;
+    name: string;
+    price: number;
+    src: string;
+}
+
+const Product = React.memo(({ name, price, src }: ProductProps) => {
+    const [imageLoading, setImageLoading] = useState(true);
+
+    const handleImageLoad = () => {
+        setImageLoading(false);
+    };
+
+    return (
+        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+            <img src={src} alt={name} onLoad={handleImageLoad} />
+            {imageLoading ? (
+                <ComponentLoader style={{ margin: 'auto' }} />
+            ) : (
+                <>
+                    <h3>{name}</h3>
+                    <p>{`$${price}`}</p>
+                    <Button onClick={() => { }}>Add to Cart</Button>
+                </>
+            )}
+        </div>
+    );
+});
 
 const Products: React.FC = () => {
     return (
-        <div>
-            <header style={{ backgroundColor: '#333', color: '#fff', padding: '10px 0', textAlign: 'center' }}>
-                <h1>Available Products</h1>
-            </header>
-            <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px' }}>
-                <div className="product" style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px', margin: '10px', display: 'inline-block', width: '200px', textAlign: 'center' }}>
-                    <img src="https://picsum.photos/200" alt="Product 1" />
-                    <h3>Product 1</h3>
-                    <p>\$19.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div className="product" style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px', margin: '10px', display: 'inline-block', width: '200px', textAlign: 'center' }}>
-                    <img src="https://picsum.photos/id/237/200" alt="Product 2" />
-                    <h3>Product 2</h3>
-                    <p>\$29.99</p>
-                    <button>Add to Cart</button>
-                </div>
-                <div className="product" style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px', margin: '10px', display: 'inline-block', width: '200px', textAlign: 'center' }}>
-                    <img src="https://picsum.photos/seed/picsum/200" alt="Product 3" />
-                    <h3>Product 3</h3>
-                    <p>\$39.99</p>
-                    <button>Add to Cart</button>
-                </div>
-            </div>
-        </div>
+        <Layout.Page>
+            <Layout.Content>
+                <Layout.Container>
+                    <Layout.Grid>
+                        {productsData.map((product) => {
+                            const { id, name, price, src } = product;
+
+                            return <Layout.GridItem lg={4} key={id}>
+                                <Card hasHoverEffect={true} style={{ padding: '20px', margin: '10px' }}>
+                                    <Product id={id} name={name} price={price} src={src} />
+                                </Card>
+                            </Layout.GridItem>
+                        })}
+                    </Layout.Grid>
+                </Layout.Container>
+            </Layout.Content>
+        </Layout.Page>
     );
 };
 

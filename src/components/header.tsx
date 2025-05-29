@@ -28,6 +28,7 @@ const Header = () => {
             <TabLinks>
                 <NavLink to={ROUTES.HOME} children={"Home"} />
                 <NavLink to={ROUTES.PRODUCTS} children={"Products"} />
+                <NavLink to={ROUTES.REACT_PORTALS} children={"React Portals"} />
             </TabLinks>
             <TabWidgets children={<Controls />} className={null} />
         </TabHeader>

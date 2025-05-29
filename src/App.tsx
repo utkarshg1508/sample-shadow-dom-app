@@ -7,6 +7,7 @@ import { RootState } from "./store";
 import Products from './pages/products';
 import Header from "./components/header";
 import { ROUTES } from "./constants/routes";
+import ReactPortals from "./pages/reactPortals";
 
 const CreatePage = (WrappedComponent: React.ComponentType<any>) => {
     return (props: any) => {
@@ -30,6 +31,7 @@ function App() {
                 <Routes>
                     <Route path={ROUTES.HOME} element={CreatePage(Home)({})} />
                     <Route path={ROUTES.PRODUCTS} element={CreatePage(Products)({})} />
+                    <Route path={ROUTES.REACT_PORTALS} element={CreatePage(ReactPortals)({})} />
                     <Route path="/" element={<Navigate to={ROUTES.HOME} replace />} />
                     <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
                 </Routes>

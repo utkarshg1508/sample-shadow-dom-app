@@ -1,4 +1,4 @@
-import { Button, Layout, Modal, ModalContent, ModalFooter, ModalHeader, Popover, Tooltip, Text, Span, CopyButton, FormFieldSelect, useForm } from "@netapp/bxp-design-system-react";
+import { Button, Layout, Modal, ModalContent, ModalFooter, ModalHeader, Popover, Tooltip, Text, Span, CopyButton, FormFieldSelect, useForm, Notification } from "@netapp/bxp-design-system-react";
 import { useState } from "react";
 
 const PopoverComp = () => {
@@ -53,6 +53,7 @@ const MenuComp = () => {
 }
 
 const ReactPortals = () => {
+    const [showNotification, setShowNotification] = useState(false);
     return <>
         <Layout.Page>
             <Layout.Content>
@@ -73,6 +74,12 @@ const ReactPortals = () => {
                         </Layout.GridItem>
                         <Layout.GridItem>
                             <MenuComp />
+                        </Layout.GridItem>
+                        <Layout.GridItem>
+                            <Button variant="primary" onClick={() => setShowNotification(true)}>
+                                Click to trigger notification
+                            </Button>
+                            {showNotification && <Notification type="info" moreInfo="Here is some more info" onClose={() => setShowNotification(false)}>Here is some information</Notification>}
                         </Layout.GridItem>
                     </Layout.Grid>
                 </Layout.Container>

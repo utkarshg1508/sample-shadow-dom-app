@@ -41,13 +41,14 @@
         shadowRoot.appendChild(containerEl);
         // 3. Mount React app
         root = ReactDOM.createRoot(containerEl);
+        // 4. Set container element as root component for BlueXP Design system to launch modals, dropdowns etc., append to shadow root.
         setRootComponent(containerEl);
-        // 4. Reder the root component inside shadowRoot
+        // 5. Reder the root component inside shadowRoot
         root.render(<SampleShadowDomModule {...props} />);
     }
 
     const unmount = () => {
-        // 1. Unmount Keystone app
+        // 1. Unmount app
         if (root) {
             root.unmount();
             root = null;
@@ -66,3 +67,41 @@
 
     export { mount, unmount }
 ```
+
+## Build app with Vite plugin
+
+- Vite configuration
+    - The service app must make wrapper file as entry file.
+
+```
+    import { defineConfig } from 'vite';
+    import react from '@vitejs/plugin-react-swc';
+    import path from 'path';
+
+    export default defineConfig({
+        base: '/sampleShadowDomApp/', // Matches the "homepage" field in package.json
+        plugins: [react()],
+        define: {
+            'process.env.NODE_ENV': JSON.stringify('production'),
+        },
+        build: {
+            lib: {
+                entry: path.resolve(__dirname, 'src/shadowDomWrapper.tsx'),
+                name: 'sampleShadowDomApp',
+                formats: ['es'],
+                fileName: () => 'index.js',
+                },
+                rollupOptions: {
+                output: {
+                    assetFileNames: 'index.css',
+                }
+            }
+        },
+    });
+```
+
+## Mandatory steps to follow
+
+- The stylesheet should not be appended to the parent document.
+- Utilize BrowserRouter from react-router-dom to set the base URL provided by the BlueXP application, which helps prevent refresh issues.
+- Set the container as the root element for the BlueXP design system to prevent modals, tooltips, and dropdowns from appending to the document body.

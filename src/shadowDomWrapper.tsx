@@ -18,13 +18,14 @@ const mount = (shadowRoot: ShadowRoot, props: any) => {
     shadowRoot.appendChild(containerEl);
     // 3. Mount React app
     root = ReactDOM.createRoot(containerEl);
+    // 4. Set container element as root component for BlueXP Design system to launch modals, dropdowns etc., append to shadow root.
     setRootComponent(containerEl);
-    // 4. Reder the root component inside shadowRoot
+    // 5. Reder the root component inside shadowRoot
     root.render(<SampleShadowDomModule {...props} />);
 }
 
 const unmount = () => {
-    // 1. Unmount Keystone app
+    // 1. Unmount app
     if (root) {
         root.unmount();
         root = null;

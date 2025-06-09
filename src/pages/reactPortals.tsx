@@ -68,7 +68,8 @@ const ReactPortals = () => {
                             <ModalComp />
                         </Layout.GridItem>
                         <Layout.GridItem>
-                            <CopyButton variant="square" color="secondary" text="text to copy">Copy</CopyButton>
+                            <Text>Copy this text</Text>
+                            <CopyButton variant="square" color="secondary" text="Copy this text">Copy</CopyButton>
                         </Layout.GridItem>
                         <Layout.GridItem>
                             <MenuComp />

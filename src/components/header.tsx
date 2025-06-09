@@ -13,22 +13,23 @@ const Controls = () => {
     return (
         <div>
             <Toggle
-                value={isDarkTheme}
-                toggle={() => dispatch(toggleTheme())}
+                value={isDarkTheme === "dark"}
+                toggle={() => dispatch(toggleTheme({isDarkTheme : isDarkTheme === "dark" ? "light" : "dark"}))}
             >
-                Theme: {isDarkTheme ? "Dark" : "Light"}
+                Theme: {isDarkTheme === "dark" ? "Dark" : "Light"}
             </Toggle>
         </div>
     );
 };
 
 const Header = () => {
+
     return (
-        <TabHeader Icon={ArpAiIcon} label="NetApp Internal">
+        <TabHeader Icon={ArpAiIcon} label="Sample Shadow DOM App">
             <TabLinks>
-                <NavLink to={ROUTES.HOME} children={"Home"} />
-                <NavLink to={ROUTES.PRODUCTS} children={"Products"} />
-                <NavLink to={ROUTES.REACT_PORTALS} children={"React Portals"} />
+                <NavLink to={`${ROUTES.HOME}`} children={"Home"} />
+                <NavLink to={`${ROUTES.PRODUCTS}`} children={"Products"} />
+                <NavLink to={`${ROUTES.REACT_PORTALS}`} children={"React Portals"} />
             </TabLinks>
             <TabWidgets children={<Controls />} className={null} />
         </TabHeader>

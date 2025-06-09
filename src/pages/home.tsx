@@ -1,9 +1,21 @@
 import { useNavigate } from 'react-router-dom';
 import { Card, Heading, Layout, Text } from '@netapp/bxp-design-system-react';
 import { ROUTES } from '../constants/routes';
+import { useSelector } from 'react-redux';
+import { RootState } from "../store";
 
 const Home = () => {
     const navigate = useNavigate();
+    const workspaceId = useSelector((state: RootState) => state.appConfig.workspaceId);
+
+    const navigateToWE = () => {
+        window.postMessage({
+            type: 'SERVICE-NAVIGATE',
+            payload: {
+                pathname: `/working-environments`,
+            },
+        });
+    }
 
     return (
         <Layout.Container>
@@ -23,21 +35,26 @@ const Home = () => {
                     </div>
                 </Layout.GridItem>
                 <Layout.GridItem>
-                    <Card
-                        hasHoverEffect={true}
-                        style={{ padding: '20px', margin: '10px' }}
+                    <div
+                        style={{ cursor: 'pointer' }}
+                        onClick={navigateToWE}
                     >
-                        <Heading level="20">Customer Reviews</Heading>
-                        <Text level="14">See what our customers are saying about us!</Text>
-                    </Card>
+                        <Card
+                            hasHoverEffect={true}
+                            style={{ padding: '20px', margin: '10px' }}
+                        >
+                            <Heading level="20">Navigate to BlueXP Canvas</Heading>
+                            <Text level="14">Click here to test the service to BlueXP messaging!</Text>
+                        </Card>
+                    </div>
                 </Layout.GridItem>
                 <Layout.GridItem>
                     <Card
                         hasHoverEffect={true}
                         style={{ padding: '20px', margin: '10px' }}
                     >
-                        <Heading level="20">Special Offers</Heading>
-                        <Text level="14">Don't miss out on our limited-time discounts and promotions!</Text>
+                        <Heading level="20">{workspaceId}</Heading>
+                        <Text level="14">Change Project on top project menu to test the BlueXP to service messaging!</Text>
                     </Card>
                 </Layout.GridItem>
             </Layout.Grid>

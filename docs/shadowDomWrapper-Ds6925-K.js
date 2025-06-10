@@ -57697,7 +57697,7 @@ const NMe = {
       e.workspaceId = t.payload.workspaceId, e.workspaceName = t.payload.workspaceName, e.baseUrl = t.payload.baseUrl;
     }
   }
-}), { setAppConfig: QD } = LP.actions, zMe = LP.reducer, HMe = N.lazy(() => import("./home-B7WX5peH.js")), UMe = N.lazy(() => import("./products-DL0sVIFy.js")), WMe = N.lazy(() => import("./reactPortals-DfUgXLwt.js")), q4 = (e) => (t) => /* @__PURE__ */ Ft.jsx($D.Page, { children: /* @__PURE__ */ Ft.jsxs($D.Content, { children: [
+}), { setAppConfig: QD } = LP.actions, zMe = LP.reducer, HMe = N.lazy(() => import("./home-tQSfmzX6.js")), UMe = N.lazy(() => import("./products-DcR9n_FK.js")), WMe = N.lazy(() => import("./reactPortals-Sh-BJ-AH.js")), q4 = (e) => (t) => /* @__PURE__ */ Ft.jsx($D.Page, { children: /* @__PURE__ */ Ft.jsxs($D.Content, { children: [
   /* @__PURE__ */ Ft.jsx(IMe, {}),
   /* @__PURE__ */ Ft.jsx(e, { ...t })
 ] }) });
@@ -57769,7 +57769,7 @@ const qMe = xMe({
 }), YMe = (e) => /* @__PURE__ */ Ft.jsx(L.StrictMode, { children: /* @__PURE__ */ Ft.jsx(aI, { store: qMe, children: /* @__PURE__ */ Ft.jsx(GMe, { ...e }) }) });
 let K5 = null, Nd = null, jd = null;
 const aAe = (e, t) => {
-  Nd = document.createElement("link"), Nd.setAttribute("rel", "stylesheet"), Nd.setAttribute("href", "http://localhost:4173/sampleShadowDomApp/index.css"), e.appendChild(Nd), jd = document.createElement("div"), e.appendChild(jd), K5 = WP.createRoot(jd), rz(jd), K5.render(/* @__PURE__ */ Ft.jsx(YMe, { ...t }));
+  Nd = document.createElement("link"), Nd.setAttribute("rel", "stylesheet"), Nd.setAttribute("href", "./index.css"), e.appendChild(Nd), jd = document.createElement("div"), e.appendChild(jd), K5 = WP.createRoot(jd), rz(jd), K5.render(/* @__PURE__ */ Ft.jsx(YMe, { ...t }));
 }, oAe = () => {
   K5 && (K5.unmount(), K5 = null), jd && jd.parentNode && (jd.parentNode.removeChild(jd), jd = null), Nd && Nd.parentNode && (Nd.parentNode.removeChild(Nd), Nd = null);
 };

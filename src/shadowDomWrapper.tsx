@@ -2,22 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import SampleShadowDomModule from './main';
 import { setRootComponent } from '@netapp/bxp-design-system-react';
+import { get } from 'http';
 
 let root: ReactDOM.Root | null = null;
 let styleEl: HTMLLinkElement | null = null;
 let containerEl: HTMLDivElement | null = null;
 
+
+const getBaseUrl = () => {
+    return import.meta.url.split('/').slice(0, -1).join('/') + '/index.css';
+}
+
 const mount = (shadowRoot: ShadowRoot, props: any) => {
     // 1. Inject CSS into shadow root
     styleEl = document.createElement('link');
     styleEl.setAttribute('rel', 'stylesheet');
-    styleEl.setAttribute('href', `${ import.meta.env.BASE_URL }index.css`);
+    styleEl.setAttribute('href', getBaseUrl());
     shadowRoot.appendChild(styleEl);
 
     const fileURL = new URL("./index.css", import.meta.url);
     console.log(import.meta);
     console.log(fileURL);
     console.log(`Reative path to docs index.css ${ import.meta.env.BASE_URL }index.css`)
+    console.log(`Getting base url ${getBaseUrl()}`);
 
     // 2. Create container for React root inside shadow
     containerEl = document.createElement('div');

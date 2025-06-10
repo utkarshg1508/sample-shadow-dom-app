@@ -1,4 +1,4 @@
-import { m as o, n as t } from "./shadowDomWrapper-k6ix07E5.js";
+import { m as o, n as t } from "./shadowDomWrapper-DR1c0VDB.js";
 export {
   o as mount,
   t as unmount

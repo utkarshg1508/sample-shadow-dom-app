@@ -11,7 +11,7 @@ const mount = (shadowRoot: ShadowRoot, props: any) => {
     // 1. Inject CSS into shadow root
     styleEl = document.createElement('link');
     styleEl.setAttribute('rel', 'stylesheet');
-    styleEl.setAttribute('href', 'http://localhost:4173/sampleShadowDomApp/index.css');
+    styleEl.setAttribute('href', './index.css');
     shadowRoot.appendChild(styleEl);
     // 2. Create container for React root inside shadow
     containerEl = document.createElement('div');

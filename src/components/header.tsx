@@ -1,26 +1,7 @@
 import { NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { ArpAiIcon } from "@netapp/bxp-style/react-icons/General";
-import { TabHeader, TabLinks, TabWidgets, Toggle } from "@netapp/bxp-design-system-react";
-import { RootState } from "../store";
+import { TabHeader, TabLinks } from "@netapp/bxp-design-system-react";
 import { ROUTES } from "../constants/routes";
-import { toggleTheme } from "../store/themeSlice";
-
-const Controls = () => {
-    const dispatch = useDispatch();
-    const isDarkTheme = useSelector((state: RootState) => state.theme.isDarkTheme);
-
-    return (
-        <div>
-            <Toggle
-                value={isDarkTheme === "dark"}
-                toggle={() => dispatch(toggleTheme({isDarkTheme : isDarkTheme === "dark" ? "light" : "dark"}))}
-            >
-                Theme: {isDarkTheme === "dark" ? "Dark" : "Light"}
-            </Toggle>
-        </div>
-    );
-};
 
 const Header = () => {
 
@@ -31,7 +12,6 @@ const Header = () => {
                 <NavLink to={`${ROUTES.PRODUCTS}`} children={"Products"} />
                 <NavLink to={`${ROUTES.REACT_PORTALS}`} children={"React Portals"} />
             </TabLinks>
-            <TabWidgets children={<Controls />} className={null} />
         </TabHeader>
     );
 };

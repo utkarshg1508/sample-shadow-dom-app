@@ -1,4 +1,4 @@
-import { r as s, j as e, L as t, T as i, f as r, B as a, N as n, P as c, S as d, g as x, M as h, h as m, i as p, k as u, l as j, F as b } from "./shadowDomWrapper-DR1c0VDB.js";
+import { r as s, j as e, L as t, T as i, f as r, B as a, N as n, P as c, S as d, g as x, M as h, h as m, i as p, k as u, l as j, F as b } from "./shadowDomWrapper-CSEPnaH5.js";
 const f = () => /* @__PURE__ */ e.jsxs("div", { children: [
   /* @__PURE__ */ e.jsx(c, { children: "Some text for my popover" }),
   /* @__PURE__ */ e.jsx(d, { children: "Some text. Some text." })

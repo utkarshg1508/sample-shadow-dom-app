@@ -9,7 +9,7 @@ let styleEl: HTMLLinkElement | null = null;
 let containerEl: HTMLDivElement | null = null;
 
 
-const getBaseUrl = () => {
+const getStyleUrl = () => {
     return import.meta.url.split('/').slice(0, -1).join('/') + '/index.css';
 }
 
@@ -17,7 +17,7 @@ const mount = (shadowRoot: ShadowRoot, props: any) => {
     // 1. Inject CSS into shadow root
     styleEl = document.createElement('link');
     styleEl.setAttribute('rel', 'stylesheet');
-    styleEl.setAttribute('href', getBaseUrl());
+    styleEl.setAttribute('href', getStyleUrl());
     shadowRoot.appendChild(styleEl);
     // 2. Create container for React root inside shadow
     containerEl = document.createElement('div');

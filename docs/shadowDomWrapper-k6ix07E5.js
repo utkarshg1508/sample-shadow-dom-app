@@ -57827,7 +57827,7 @@ const j9e = {
       e.workspaceId = t.payload.workspaceId, e.workspaceName = t.payload.workspaceName, e.baseUrl = t.payload.baseUrl;
     }
   }
-}), { setAppConfig: JD } = kP.actions, H9e = kP.reducer, U9e = $.lazy(() => import("./home-CC9vgsEo.js")), W9e = $.lazy(() => import("./products-CD-v536I.js")), G9e = $.lazy(() => import("./reactPortals-CrbTdNre.js")), q4 = (e) => (t) => /* @__PURE__ */ Ft.jsx($D.Page, { children: /* @__PURE__ */ Ft.jsxs($D.Content, { children: [
+}), { setAppConfig: JD } = kP.actions, H9e = kP.reducer, U9e = $.lazy(() => import("./home-CQBdudAF.js")), W9e = $.lazy(() => import("./products--IbCOBJq.js")), G9e = $.lazy(() => import("./reactPortals-Dw4r0kxt.js")), q4 = (e) => (t) => /* @__PURE__ */ Ft.jsx($D.Page, { children: /* @__PURE__ */ Ft.jsxs($D.Content, { children: [
   /* @__PURE__ */ Ft.jsx(B9e, {}),
   /* @__PURE__ */ Ft.jsx(e, { ...t })
 ] }) });
@@ -57899,9 +57899,9 @@ const Y9e = A9e({
 }), V9e = (e) => /* @__PURE__ */ Ft.jsx(L.StrictMode, { children: /* @__PURE__ */ Ft.jsx(oI, { store: Y9e, children: /* @__PURE__ */ Ft.jsx(q9e, { ...e }) }) });
 let Kb = null, $d = null, jd = null;
 const oMe = (e, t) => {
-  $d = document.createElement("link"), $d.setAttribute("rel", "stylesheet"), $d.setAttribute("href", "./index.css"), e.appendChild($d);
+  $d = document.createElement("link"), $d.setAttribute("rel", "stylesheet"), $d.setAttribute("href", "/sampleShadowDomApp/index.css"), e.appendChild($d);
   const n = new URL("data:text/css;base64,aHRtbCwNCmJvZHksDQojcm9vdCB7DQogICAgaGVpZ2h0OiAxMDAlOw0KfQ==", import.meta.url);
-  console.log(import.meta.url), console.log(n), jd = document.createElement("div"), e.appendChild(jd), Kb = GP.createRoot(jd), iz(jd), Kb.render(/* @__PURE__ */ Ft.jsx(V9e, { ...t }));
+  console.log(import.meta), console.log(n), console.log("Reative path to docs index.css /sampleShadowDomApp/index.css"), jd = document.createElement("div"), e.appendChild(jd), Kb = GP.createRoot(jd), iz(jd), Kb.render(/* @__PURE__ */ Ft.jsx(V9e, { ...t }));
 }, sMe = () => {
   Kb && (Kb.unmount(), Kb = null), jd && jd.parentNode && (jd.parentNode.removeChild(jd), jd = null), $d && $d.parentNode && ($d.parentNode.removeChild($d), $d = null);
 };

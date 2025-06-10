@@ -19,13 +19,6 @@ const mount = (shadowRoot: ShadowRoot, props: any) => {
     styleEl.setAttribute('rel', 'stylesheet');
     styleEl.setAttribute('href', getBaseUrl());
     shadowRoot.appendChild(styleEl);
-
-    const fileURL = new URL("./index.css", import.meta.url);
-    console.log(import.meta);
-    console.log(fileURL);
-    console.log(`Reative path to docs index.css ${ import.meta.env.BASE_URL }index.css`)
-    console.log(`Getting base url ${getBaseUrl()}`);
-
     // 2. Create container for React root inside shadow
     containerEl = document.createElement('div');
     shadowRoot.appendChild(containerEl);

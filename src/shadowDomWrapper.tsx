@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import SampleShadowDomModule from './main';
 import { setRootComponent } from '@netapp/bxp-design-system-react';
-import { get } from 'http';
 
 let root: ReactDOM.Root | null = null;
 let styleEl: HTMLLinkElement | null = null;
@@ -18,6 +17,7 @@ const mount = (shadowRoot: ShadowRoot, props: any) => {
     styleEl = document.createElement('link');
     styleEl.setAttribute('rel', 'stylesheet');
     styleEl.setAttribute('href', getStyleUrl());
+    // Ensure the style element is scoped to the shadow DOM
     shadowRoot.appendChild(styleEl);
     // 2. Create container for React root inside shadow
     containerEl = document.createElement('div');

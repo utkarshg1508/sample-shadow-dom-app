@@ -53,7 +53,16 @@ const MenuComp = () => {
 }
 
 const ReactPortals = () => {
-    const [showNotification, setShowNotification] = useState(false);
+
+    const triggerNotification = () => {
+        window.postMessage({
+            type: 'SERVICE:NOTIFICATION',
+            payload: {
+                message: 'Dummy notification to BlueXP',
+                type: 'info',
+            },
+        });
+    }
     return <>
         <Layout.Page>
             <Layout.Content>
@@ -76,10 +85,9 @@ const ReactPortals = () => {
                             <MenuComp />
                         </Layout.GridItem>
                         <Layout.GridItem>
-                            <Button variant="primary" onClick={() => setShowNotification(true)}>
+                            <Button variant="primary" onClick={() => triggerNotification()}>
                                 Click to trigger notification
                             </Button>
-                            {showNotification && <Notification type="info" moreInfo="Here is some more info" onClose={() => setShowNotification(false)}>Here is some information</Notification>}
                         </Layout.GridItem>
                     </Layout.Grid>
                 </Layout.Container>

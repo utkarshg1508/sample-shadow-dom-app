@@ -48,4 +48,14 @@ const unmount = () => {
     }
 }
 
-export { mount, unmount }
+// Extend the Window interface to include remoteApp
+declare global {
+    interface Window {
+        sampleShadowDomApp?: {
+            mount: (shadowRoot: ShadowRoot, props: any) => void;
+            unmount: () => void;
+        };
+    }
+}
+
+window.sampleShadowDomApp = { mount, unmount }

@@ -59,7 +59,7 @@ const ReactPortals = () => {
             type: 'SERVICE:NOTIFICATION',
             payload: {
                 message: 'Dummy notification to BlueXP',
-                type: 'info',
+                type: 'NOTIFICATIONS:SUCCESS',
             },
         });
     }

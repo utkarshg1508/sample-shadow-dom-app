@@ -10,14 +10,17 @@ export default defineConfig({
   },
   build: {
     outDir: 'docs',
+    target: 'esnext',
     lib: {
       entry: path.resolve(__dirname, 'src/shadowDomWrapper.tsx'),
       name: 'sampleShadowDomApp',
       formats: ['es'],
-      fileName: () => 'index.js',
+      fileName: 'index',
     },
     rollupOptions: {
+      external: [], // <-- This tells Rollup to bundle everything
       output: {
+        globals: {},
         assetFileNames: 'index.css',
       }
     }

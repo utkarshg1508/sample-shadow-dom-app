@@ -57696,7 +57696,7 @@ const M9e = {
       e.workspaceId = t.payload.workspaceId, e.workspaceName = t.payload.workspaceName, e.baseUrl = t.payload.baseUrl;
     }
   }
-}), { setAppConfig: ID } = yP.actions, R9e = yP.reducer, F9e = N.lazy(() => import("./home-B-3jHTZM.js")), k9e = N.lazy(() => import("./products-B02iC1rR.js")), L9e = N.lazy(() => import("./reactPortals-DYHRlHQs.js")), D4 = (e) => (t) => /* @__PURE__ */ Vt.jsx(SD.Page, { children: /* @__PURE__ */ Vt.jsxs(SD.Content, { children: [
+}), { setAppConfig: ID } = yP.actions, R9e = yP.reducer, F9e = N.lazy(() => import("./home-BGREHPKt.js")), k9e = N.lazy(() => import("./products-KGYohJCJ.js")), L9e = N.lazy(() => import("./reactPortals-CCnEJ4eM.js")), D4 = (e) => (t) => /* @__PURE__ */ Vt.jsx(SD.Page, { children: /* @__PURE__ */ Vt.jsxs(SD.Content, { children: [
   /* @__PURE__ */ Vt.jsx(WAe, {}),
   /* @__PURE__ */ Vt.jsx(e, { ...t })
 ] }) });

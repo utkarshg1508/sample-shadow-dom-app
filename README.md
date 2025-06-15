@@ -128,3 +128,4 @@
 - Utilize BrowserRouter from react-router-dom to set the base URL provided by the BlueXP application, which helps prevent refresh issues.
 - Set the container as the root element for the BlueXP design system to prevent modals, tooltips, and dropdowns from appending to the document body.
 - Assign mount and unmount function to the unique app name to the window object.
+- To use this app in Netapp Internals playground, assign mount and unmount function to sampleShadowDomApp property of window object.

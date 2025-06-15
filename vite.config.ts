@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
 export default defineConfig({
-  base: '/sampleShadowDomApp/', // Matches the "homepage" field in package.json
+  base: '/sampleShadowDomApp/',
   plugins: [react()],
   define: {
     'process.env.NODE_ENV': JSON.stringify('production'),
@@ -18,7 +18,7 @@ export default defineConfig({
       fileName: 'index',
     },
     rollupOptions: {
-      external: [], // <-- This tells Rollup to bundle everything
+      external: [],
       output: {
         globals: {},
         assetFileNames: 'index.css',

@@ -9,7 +9,7 @@
 
 
 ## Steps to make app render inside shadow dom
-- Write a wrapper which exports mount and unmount function
+- Write a wrapper which assigns mount and unmount function to the unique app name in window object.
 - Mounting service app:
     - A shadow root will be created in BlueXP CMUI, along with the parameters needed for application initialization, and this will be passed to the mount function.
     - The service app must import the required styles and link them as a stylesheet inside the shadow root. Note that the stylesheet should not be appended to the parent document.
@@ -30,11 +30,17 @@
     let styleEl: HTMLLinkElement | null = null;
     let containerEl: HTMLDivElement | null = null;
 
+
+    const getStyleUrl = () => {
+        return import.meta.url.split('/').slice(0, -1).join('/') + '/index.css';
+    }
+
     const mount = (shadowRoot: ShadowRoot, props: any) => {
         // 1. Inject CSS into shadow root
         styleEl = document.createElement('link');
         styleEl.setAttribute('rel', 'stylesheet');
-        styleEl.setAttribute('href', 'http://localhost:4173/sampleShadowDomApp/index.css');
+        styleEl.setAttribute('href', getStyleUrl());
+        // Ensure the style element is scoped to the shadow DOM
         shadowRoot.appendChild(styleEl);
         // 2. Create container for React root inside shadow
         containerEl = document.createElement('div');
@@ -65,7 +71,19 @@
         }
     }
 
-    export { mount, unmount }
+    // Extend the Window interface to include the global property for the app.
+    // This allows the app to be mounted and unmounted from the BlueXP platform.
+    // The app name should be unique and should not conflict with other apps in the BlueXP platform.
+    declare global {
+        interface Window {
+            sampleShadowDomApp?: {
+                mount: (shadowRoot: ShadowRoot, props: any) => void;
+                unmount: () => void;
+            };
+        }
+    }
+    // Expose the mount and unmount functions globally using the unique app name and share with BlueXP platform team.
+    window.sampleShadowDomApp = { mount, unmount }
 ```
 
 ## Build app with Vite plugin
@@ -79,24 +97,28 @@
     import path from 'path';
 
     export default defineConfig({
-        base: '/sampleShadowDomApp/', // Matches the "homepage" field in package.json
-        plugins: [react()],
-        define: {
-            'process.env.NODE_ENV': JSON.stringify('production'),
+    base: '/sampleShadowDomApp/',
+    plugins: [react()],
+    define: {
+        'process.env.NODE_ENV': JSON.stringify('production'),
+    },
+    build: {
+        outDir: 'docs',
+        target: 'esnext',
+        lib: {
+        entry: path.resolve(__dirname, 'src/shadowDomWrapper.tsx'),
+        name: 'sampleShadowDomApp',
+        formats: ['es'],
+        fileName: 'index',
         },
-        build: {
-            lib: {
-                entry: path.resolve(__dirname, 'src/shadowDomWrapper.tsx'),
-                name: 'sampleShadowDomApp',
-                formats: ['es'],
-                fileName: () => 'index.js',
-                },
-                rollupOptions: {
-                output: {
-                    assetFileNames: 'index.css',
-                }
-            }
-        },
+        rollupOptions: {
+        external: [],
+        output: {
+            globals: {},
+            assetFileNames: 'index.css',
+        }
+        }
+    },
     });
 ```
 
@@ -105,3 +127,4 @@
 - The stylesheet should not be appended to the parent document.
 - Utilize BrowserRouter from react-router-dom to set the base URL provided by the BlueXP application, which helps prevent refresh issues.
 - Set the container as the root element for the BlueXP design system to prevent modals, tooltips, and dropdowns from appending to the document body.
+- Assign mount and unmount function to the unique app name to the window object.

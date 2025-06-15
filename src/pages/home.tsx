@@ -25,9 +25,9 @@ const Home = () => {
                         hasHoverEffect={true}
                         style={{ padding: '20px', margin: '10px' }}
                     >
-                        <Text level="14">The global property name that should be used to configure the service application in the playground.</Text>
-                        <Heading level="20">sampleShadowDomApp</Heading>
-                        <Text level="14"><a href='https://github.com/utkarshg1508/sample-shadow-dom-app'>Here</a> is the GitHub URL for a sample Shadow DOM application.</Text>
+                        <Heading level="20">Sample Shadow Dom App Details</Heading>
+                        <Text level="14">The global property name that should be used to configure the service application in the playground is <b>sampleShadowDomApp</b></Text>
+                        <Text level="14">The GitHub URL for this sample Shadow DOM application. <a target='_blank' href='https://github.com/utkarshg1508/sample-shadow-dom-app'>Click here</a></Text>
                     </Card>
                 </Layout.GridItem>
                 <Layout.GridItem>

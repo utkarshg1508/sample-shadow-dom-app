@@ -21,6 +21,16 @@ const Home = () => {
         <Layout.Container>
             <Layout.Grid>
                 <Layout.GridItem>
+                    <Card
+                        hasHoverEffect={true}
+                        style={{ padding: '20px', margin: '10px' }}
+                    >
+                        <Text level="14">The global property name that should be used to configure the service application in the playground.</Text>
+                        <Heading level="20">sampleShadowDomApp</Heading>
+                        <Text level="14"><a href='https://github.com/utkarshg1508/sample-shadow-dom-app'>Here</a> is the GitHub URL for a sample Shadow DOM application.</Text>
+                    </Card>
+                </Layout.GridItem>
+                <Layout.GridItem>
                     <div
                         style={{ cursor: 'pointer' }}
                         onClick={() => navigate(ROUTES.PRODUCTS)}

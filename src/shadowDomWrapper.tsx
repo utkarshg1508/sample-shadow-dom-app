@@ -48,7 +48,9 @@ const unmount = () => {
     }
 }
 
-// Extend the Window interface to include remoteApp
+// Extend the Window interface to include the global property for the app.
+// This allows the app to be mounted and unmounted from the BlueXP platform.
+// The app name should be unique and should not conflict with other apps in the BlueXP platform.
 declare global {
     interface Window {
         sampleShadowDomApp?: {
@@ -57,5 +59,5 @@ declare global {
         };
     }
 }
-
+// Expose the mount and unmount functions globally using the unique app name and share with BlueXP platform team.
 window.sampleShadowDomApp = { mount, unmount }

@@ -7,12 +7,47 @@ import { RootState } from "../store";
 const Home = () => {
     const navigate = useNavigate();
     const workspaceId = useSelector((state: RootState) => state.appConfig.workspaceId);
+    const start = performance.now();
 
     const navigateToWE = () => {
         window.postMessage({
             type: 'SERVICE-NAVIGATE',
             payload: {
                 pathname: `/working-environments`,
+            },
+        });
+    }
+
+    // A general-purpose function to track any kind of user interaction (e.g., button clicks, video plays, downloads).
+    const hitTrackEventAnalytics = () => {
+        window.postMessage({
+            type: 'SERVICE-SHADOW-DOM-GA',
+            payload: {
+                type: 'trackEvent',
+                details: { category: "SAMPLE_APP_TRACK_EVENT", action: "NAVIGATE_TO_CANVAS", label: 'TRACK_OPEN_CANVAS', value: 'Passed' }
+            },
+        });
+    };
+
+    // Tracks when a user clicks on a link that leads to an external website.
+    const hitExternalLinkAnalytics = () => {
+        window.postMessage({
+            type: 'SERVICE-SHADOW-DOM-GA',
+            payload: {
+                type: 'trackExternalLink',
+                details: { category: "SAMPLE_APP_TRACK_EXTERNAL_LINK", label: 'TRACK_OPEN_GITHUB_LINK' }
+            },
+        });
+    };
+
+    // Tracks how long a user takes to perform a specific action or how long a process takes (e.g., page load time, form submission time).
+    const hitTimingAnalytics = () => {
+        const end = performance.now();
+        window.postMessage({
+            type: 'SERVICE-SHADOW-DOM-GA',
+            payload: {
+                type: 'trackTiming',
+                details: { category: "SAMPLE_APP_TRACK_TIMING", name: 'PREVIOUS_PAGE_LOAD_TIME', value: (end - start)}
             },
         });
     }
@@ -27,13 +62,13 @@ const Home = () => {
                     >
                         <Heading level="20">Sample Shadow Dom App Details</Heading>
                         <Text level="14">The global property name that should be used to configure the service application in the playground is <b>sampleShadowDomApp</b></Text>
-                        <Text level="14">The GitHub URL for this sample Shadow DOM application. <a target='_blank' href='https://github.com/utkarshg1508/sample-shadow-dom-app'>Click here</a></Text>
+                        <Text level="14">The GitHub URL for this sample Shadow DOM application. <a target='_blank' href='https://github.com/utkarshg1508/sample-shadow-dom-app' onClick={(e) => hitExternalLinkAnalytics()}>Click here</a></Text>
                     </Card>
                 </Layout.GridItem>
                 <Layout.GridItem>
                     <div
                         style={{ cursor: 'pointer' }}
-                        onClick={navigateToWE}
+                        onClick={() => {navigateToWE(); hitTrackEventAnalytics(); hitTimingAnalytics();}}
                     >
                         <Card
                             hasHoverEffect={true}

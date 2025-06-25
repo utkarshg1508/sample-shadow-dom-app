@@ -21,7 +21,7 @@ const Home = () => {
     // A general-purpose function to track any kind of user interaction (e.g., button clicks, video plays, downloads).
     const hitTrackEventAnalytics = () => {
         window.postMessage({
-            type: 'SERVICE-SHADOW-DOM-GA',
+            type: 'SERVICE:SEND-GA-EVENT',
             payload: {
                 type: 'trackEvent',
                 details: { category: "SAMPLE_APP_TRACK_EVENT", action: "NAVIGATE_TO_CANVAS", label: 'TRACK_OPEN_CANVAS', value: 'Passed' }
@@ -32,7 +32,7 @@ const Home = () => {
     // Tracks when a user clicks on a link that leads to an external website.
     const hitExternalLinkAnalytics = () => {
         window.postMessage({
-            type: 'SERVICE-SHADOW-DOM-GA',
+            type: 'SERVICE:SEND-GA-EVENT',
             payload: {
                 type: 'trackExternalLink',
                 details: { category: "SAMPLE_APP_TRACK_EXTERNAL_LINK", label: 'TRACK_OPEN_GITHUB_LINK' }
@@ -44,7 +44,7 @@ const Home = () => {
     const hitTimingAnalytics = () => {
         const end = performance.now();
         window.postMessage({
-            type: 'SERVICE-SHADOW-DOM-GA',
+            type: 'SERVICE:SEND-GA-EVENT',
             payload: {
                 type: 'trackTiming',
                 details: { category: "SAMPLE_APP_TRACK_TIMING", name: 'PREVIOUS_PAGE_LOAD_TIME', value: (end - start)}

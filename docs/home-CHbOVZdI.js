@@ -1,6 +1,6 @@
-import { u as x, a as g, j as e, L as s, C as n, H as r, T as t, R as A } from "./shadowDomWrapper-fnAZplbS.js";
-const m = () => {
-  const i = x(), l = g((a) => a.appConfig.workspaceId), o = performance.now(), c = () => {
+import { u as E, a as x, j as e, L as s, C as n, H as r, T as t, R as g } from "./shadowDomWrapper-B9t_KncQ.js";
+const u = () => {
+  const i = E(), l = x((a) => a.appConfig.workspaceId), o = performance.now(), c = () => {
     window.postMessage({
       type: "SERVICE-NAVIGATE",
       payload: {
@@ -9,7 +9,7 @@ const m = () => {
     });
   }, d = () => {
     window.postMessage({
-      type: "SERVICE-SHADOW-DOM-GA",
+      type: "SERVICE:SEND-GA-EVENT",
       payload: {
         type: "trackEvent",
         details: { category: "SAMPLE_APP_TRACK_EVENT", action: "NAVIGATE_TO_CANVAS", label: "TRACK_OPEN_CANVAS", value: "Passed" }
@@ -17,7 +17,7 @@ const m = () => {
     });
   }, p = () => {
     window.postMessage({
-      type: "SERVICE-SHADOW-DOM-GA",
+      type: "SERVICE:SEND-GA-EVENT",
       payload: {
         type: "trackExternalLink",
         details: { category: "SAMPLE_APP_TRACK_EXTERNAL_LINK", label: "TRACK_OPEN_GITHUB_LINK" }
@@ -26,7 +26,7 @@ const m = () => {
   }, h = () => {
     const a = performance.now();
     window.postMessage({
-      type: "SERVICE-SHADOW-DOM-GA",
+      type: "SERVICE:SEND-GA-EVENT",
       payload: {
         type: "trackTiming",
         details: { category: "SAMPLE_APP_TRACK_TIMING", name: "PREVIOUS_PAGE_LOAD_TIME", value: a - o }
@@ -87,7 +87,7 @@ const m = () => {
       "div",
       {
         style: { cursor: "pointer" },
-        onClick: () => i(A.PRODUCTS),
+        onClick: () => i(g.PRODUCTS),
         children: /* @__PURE__ */ e.jsxs(
           n,
           {
@@ -104,5 +104,5 @@ const m = () => {
   ] }) });
 };
 export {
-  m as default
+  u as default
 };

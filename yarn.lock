@@ -467,12 +467,10 @@
     zod "^3.23.8"
     zod-to-json-schema "^3.24.1"
 
-"@netapp/bxp-design-system-react@2.0.0":
-  version "2.0.0"
-  resolved "https://npm.repo.eng.netapp.com/artifactory/api/npm/openlab-npm/@netapp/bxp-design-system-react/-/@netapp/bxp-design-system-react-2.0.0.tgz"
-  integrity sha512-GASAEDIlHK+mANbshiFbz3y+M+56nT8XQVKPBKixHfMM0ZBJD4z+JBY/++XlZ+NUwtEbwNiiAKP1N1z0Y1oXIQ==
+"@netapp/bxp-design-system-react@file:../bxp-design-system/bluexp-design-system/components/react":
+  version "2.0.7"
   dependencies:
-    "@netapp/bxp-style" "1.0.5"
+    "@netapp/bxp-style" "1.0.10"
     buffer "^6.0.3"
     numeral "^2.0.6"
     react-animate-height "^2.0.7"
@@ -488,15 +486,15 @@
     typescript "^5.1.6"
     uuid "^3.3.2"
 
+"@netapp/bxp-style@1.0.10":
+  version "1.0.10"
+  resolved "https://npm.repo.eng.netapp.com/artifactory/api/npm/openlab-npm/@netapp/bxp-style/-/@netapp/bxp-style-1.0.10.tgz#67f0003d5b677c6f15b15ad6a572b3f515a90b6e"
+  integrity sha512-buPYLz9mxkTX9m3JzkDlW3TSE9jFWqm/eUCuBaLJIDuL0itYFZxQ3pxcjKTHnvDSEC9geXLWXUHdZeR5FZCNew==
+
 "@netapp/bxp-style@1.0.3":
   version "1.0.3"
   resolved "https://npm.repo.eng.netapp.com/artifactory/api/npm/openlab-npm/@netapp/bxp-style/-/@netapp/bxp-style-1.0.3.tgz"
   integrity sha512-L3jQD7VrAFMB6FjZ3r/lBPIwFiRcZ+bQhC0DTvDLggeuil8LqzP59X/lYjhBTwaYvOgr9Wso4TlzOAkGq+9W/w==
-
-"@netapp/bxp-style@1.0.5":
-  version "1.0.5"
-  resolved "https://npm.repo.eng.netapp.com/artifactory/api/npm/openlab-npm/@netapp/bxp-style/-/@netapp/bxp-style-1.0.5.tgz"
-  integrity sha512-4xVQPB+nrRewN5RNv7fckXFJiQVeML7R9EKG4Ia8GaKT2vb0fSgPiG6zCPghi7VpxPaGHiLlprLsZLMrptx0PA==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

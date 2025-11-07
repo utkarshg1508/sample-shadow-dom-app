@@ -467,8 +467,10 @@
     zod "^3.23.8"
     zod-to-json-schema "^3.24.1"
 
-"@netapp/bxp-design-system-react@file:../bxp-design-system/bluexp-design-system/components/react":
+"@netapp/bxp-design-system-react@2.0.7":
   version "2.0.7"
+  resolved "https://npm.repo.eng.netapp.com/artifactory/api/npm/openlab-npm/@netapp/bxp-design-system-react/-/@netapp/bxp-design-system-react-2.0.7.tgz#438c59a398b2ea9f5d7631cd7f744cf6091e5dde"
+  integrity sha512-splatHj8H5oZtaFx4WfUuDVmlCe+gHLtrAf0A0sFUBjQocIHZ+fp31f4C0h5CloabRAhxvfqohfMkCe5x8QkJA==
   dependencies:
     "@netapp/bxp-style" "1.0.10"
     buffer "^6.0.3"

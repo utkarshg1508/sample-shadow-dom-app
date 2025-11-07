@@ -12,7 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "@netapp/bxp-design-system-react": "file:../bxp-design-system/bluexp-design-system/components/react",
+    "@netapp/bxp-design-system-react": "2.0.7",
     "@netapp/bxp-style": "1.0.3",
     "@reduxjs/toolkit": "^2.7.0",
     "gh-pages": "^6.3.0",

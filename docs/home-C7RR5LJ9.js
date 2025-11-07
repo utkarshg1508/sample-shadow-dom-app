@@ -1,4 +1,4 @@
-import { u as E, a as x, j as e, L as s, C as n, H as r, T as t, R as g } from "./shadowDomWrapper-C0fagK3K.js";
+import { u as E, a as x, j as e, L as s, C as n, H as r, T as t, R as g } from "./shadowDomWrapper-Fw0rhQC_.js";
 const u = () => {
   const i = E(), l = x((a) => a.appConfig.workspaceId), o = performance.now(), c = () => {
     window.postMessage({

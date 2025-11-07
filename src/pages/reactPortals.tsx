@@ -15,20 +15,37 @@ const TooltipComp = () => {
     </div>
 }
 
-const ModalComp = () => {
+const ModalComp = ({ environmentType, environment }: { environmentType: string, environment: HTMLElement }) => {
     const [open, setOpen] = useState(false);
+    const form = useForm({ name: "" });
+    const options = [
+        { label: "Option 1", value: 1 },
+        { label: "Option 2", value: 2 },
+        { label: "Option 3", value: 3 },
+        { label: "Option 4", value: 4 },
+        { label: "Option 5", value: 5 },
+        { label: "Option 6", value: 6 },
+        { label: "Option 7", value: 7 }
+    ];
     if (open) {
         return (
             <Modal>
                 <ModalHeader>Modal header</ModalHeader>
-                <ModalContent>I am a modal with one button in the footer</ModalContent>
+                <ModalContent className="" style={{ overflow: "hidden" }}>
+                    <FormFieldSelect label="Account"
+                        name="name"
+                        form={form}
+                        options={options}
+                        menuPortalTarget={environment}
+                    />
+                </ModalContent>
                 <ModalFooter>
                     <Button onClick={() => setOpen(false)}>Cancel</Button>
                 </ModalFooter>
             </Modal>
         );
     } else {
-        return <Button onClick={() => { setOpen(true) }}>Open</Button>
+        return <Button onClick={() => { setOpen(true) }}>{environmentType} Open</Button>
     }
 }
 
@@ -75,7 +92,7 @@ const ReactPortals = () => {
                             <TooltipComp />
                         </Layout.GridItem>
                         <Layout.GridItem>
-                            <ModalComp />
+                            <ModalComp environmentType={"Document Body"} environment={document.body} />
                         </Layout.GridItem>
                         <Layout.GridItem>
                             <Text>Copy this text</Text>

@@ -58031,7 +58031,7 @@ const CMe = {
       e.workspaceId = t.payload.workspaceId, e.workspaceName = t.payload.workspaceName, e.baseUrl = t.payload.baseUrl;
     }
   }
-}), { setAppConfig: BD } = vP.actions, OMe = vP.reducer, TMe = N.lazy(() => import("./home-CeKRcQnm.js")), DMe = N.lazy(() => import("./products-B39W2kx9.js")), RMe = N.lazy(() => import("./reactPortals-CDiUr2kA.js")), k4 = (e) => (t) => /* @__PURE__ */ Vt.jsx(xD.Page, { children: /* @__PURE__ */ Vt.jsxs(xD.Content, { children: [
+}), { setAppConfig: BD } = vP.actions, OMe = vP.reducer, TMe = N.lazy(() => import("./home-C7RR5LJ9.js")), DMe = N.lazy(() => import("./products-h1WJua5z.js")), RMe = N.lazy(() => import("./reactPortals-DRtrEfmg.js")), k4 = (e) => (t) => /* @__PURE__ */ Vt.jsx(xD.Page, { children: /* @__PURE__ */ Vt.jsxs(xD.Content, { children: [
   /* @__PURE__ */ Vt.jsx(z9e, {}),
   /* @__PURE__ */ Vt.jsx(e, { ...t })
 ] }) });
@@ -58126,11 +58126,11 @@ export {
   PMe as e,
   VB as f,
   ki as g,
-  BMe as h,
-  IMe as i,
+  UMe as h,
+  BMe as i,
   Vt as j,
-  zMe as k,
-  UMe as l,
+  IMe as k,
+  zMe as l,
   N as r,
   Kj as u
 };

@@ -58426,7 +58426,7 @@ const xMe = {
       e.workspaceId = t.payload.workspaceId, e.workspaceName = t.payload.workspaceName, e.baseUrl = t.payload.baseUrl;
     }
   }
-}), { setAppConfig: PD } = mI.actions, OMe = mI.reducer, TMe = N.lazy(() => import("./home-Cqp1yNCa.js")), DMe = N.lazy(() => import("./products-C2Igqi5O.js")), RMe = N.lazy(() => import("./reactPortals-OFQ8Ulcb.js")), L4 = (e) => (t) => /* @__PURE__ */ Yt.jsx(CD.Page, { children: /* @__PURE__ */ Yt.jsxs(CD.Content, { children: [
+}), { setAppConfig: PD } = mI.actions, OMe = mI.reducer, TMe = N.lazy(() => import("./home-B-VlBqr_.js")), DMe = N.lazy(() => import("./products-DNdCokMf.js")), RMe = N.lazy(() => import("./reactPortals-D8Ff0gP3.js")), L4 = (e) => (t) => /* @__PURE__ */ Yt.jsx(CD.Page, { children: /* @__PURE__ */ Yt.jsxs(CD.Content, { children: [
   /* @__PURE__ */ Yt.jsx(P9e, {}),
   /* @__PURE__ */ Yt.jsx(e, { ...t })
 ] }) });
@@ -58521,11 +58521,11 @@ export {
   IMe as e,
   VP as f,
   Ri as g,
-  PMe as h,
-  BMe as i,
+  UMe as h,
+  PMe as i,
   Yt as j,
-  zMe as k,
-  UMe as l,
+  BMe as k,
+  zMe as l,
   N as r,
   Vj as u
 };
